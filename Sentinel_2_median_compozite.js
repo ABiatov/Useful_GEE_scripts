@@ -128,10 +128,11 @@ Map.addLayer(med_dataset_2a.clip(AOI), rgbVis_Color_Infrared, 'Color_Infrared',f
 Export.image.toDrive({
   image: med_dataset_2a.clip(geometry),
   description: 'Vin_'+num_area+'_Sent-2_'+year+'_'+STARTDAY+'_'+ENDDAY,
-  folder: 'GEE data',
+  folder: 'GEE_data',
   scale: 10,
   region: geometry,
   crs: 'EPSG:4326',
+  maxPixels: 1e10,
   fileFormat: 'GeoTIFF',
   formatOptions: {
     cloudOptimized: true
